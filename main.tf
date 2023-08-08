@@ -19,9 +19,7 @@ resource "aws_security_group" "sg" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
-  tags = {
-    Name = merge(var.tags, { Name = "${var.name}-alb-${var.env}-pg" })
-  }
+  tags = merge(var.tags, { Name = "${var.name}-alb-${var.env}-sg" })
 }
 
 resource "aws_lb" "main" {
